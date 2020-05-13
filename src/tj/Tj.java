@@ -32,7 +32,7 @@ public class Tj {
         System.out.println("apkpath = " + apkpath + "\ncertpath = " + certpath + "\ncertsavepath = " + certsavepath);
 
         try {
-            String sign = SignatureUtils.xchSignBytesToStr(getZipIn(apkpath, certpath));
+            String sign = SignatureUtils.xchSignBytesToStr(SignatureUtils.getZipIn(apkpath, certpath));
             SignatureUtils.writeSignStrToFile(new File(certsavepath), sign);
         } catch (Exception e) {
             System.err.println("parse apk sign fail!\n" + e);
